@@ -1,0 +1,10 @@
+- runenv: dev
+- dev:
+    hostname: 'test'
+    password: '123456'
+    host: 'http://dev.com'
+
+- prod:
+    hostname: 'prod'
+    password: '123456'
+    host: 'http://prod.com'
