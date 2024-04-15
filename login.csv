@@ -1,0 +1,6 @@
+接口ID,接口名,请求方式,path,请求参数,预期状态码,预期返回值,提取参数,需要参数
+1001,登陆,post,/login.html,"{
+   ‘username’:’test’,
+   ‘password’:’123456’
+}",200,login success,token,
+1002,查看个人信息,get,/user.html,?username=‘test’,200,test,,{$token}

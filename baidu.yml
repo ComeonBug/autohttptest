@@ -1,0 +1,24 @@
+case1:
+  casedesc: '正向用例1'
+  path: '/{keyword1}/{keyword2}'
+  method: 'get'
+  keyword1: '1'
+  keyword2: '2'
+  assert:
+    - code: 200
+    - data:
+        key1: in(success)
+        key2: not_in(fail)
+        key3: between(1,10)
+
+case2:
+  casedesc: '异常用例2'
+  path: '/{keyword3}/{keyword4}'
+  method: 'get'
+  keyword3: '3'
+  keyword4: '4'
+  assert:
+    - code: 400
+    - data:
+        key1: in(fail)
+        key2: not_in(用户名错误)
