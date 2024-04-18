@@ -1,0 +1,28 @@
+case1:
+  casedesc: '正向用例1'
+  path: '/{keyword1}/{keyword2}'
+  method: 'get'
+  keyword1: '1'
+  keyword2: '2'
+  assert:
+    - matchExprossions:
+        - match_code:
+            - key1: {{RESPONSECODE}}  # {{全局变量}}：RESPONSECODE 指http返回的code
+              opertaion: is
+              values:
+                - 200
+        - match_content:
+            - key1: user_name  # reponse返回内容解析出来的变量user_name
+              opertaion: is   # 解析出变量后的判定方式 is等于 notis 不等于 has 包含   nothas 不包含  between介于  in 在其中 notin 不在其中 gt 大于 lt小于
+              values:
+                - zhangsan
+            - key2: user_resource
+              operation: nothas
+              values:
+                - acp
+                - cci
+                - aoss
+            - key2: user_age
+              operation: between
+              values:
+                - [ 18,20 ]
